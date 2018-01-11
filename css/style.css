@@ -15,10 +15,8 @@ body
 {
 	margin: 0;
 	padding: 0;
-	color: #6f6f6f;
-	background-color: #ccc;
 
-	font-size: 87.5%;
+	color: #ffffff;
 }
 
 /* ------------------------
@@ -31,138 +29,18 @@ body
 }
 
 /* ------------------------
-*à trier
+*liens
 ---------------------- */
-
-.title1
-{
-	margin: 0 0 60px 0;
-	font-size: 1.8rem;
-	z-index: 1;
-	color: #ffffff;
-	display: inline-block;
-	position: relative;
-	font-weight: 300;
-	text-transform: uppercase;
-	padding: 0px 20px;
-}
-
-.title1::after
-{
-	content: '';
-	position: absolute;
-	width: 100%;
-	max-width: 100%;
-	z-index: -1;
-	height: 50%;
-	margin: auto;
-	background: #000000;
-	left: 0;
-	bottom: 0;
-}
-
-.title2
-{
-	margin: 60px 0;
-	font-size: 1.8rem;
-	z-index: 1;
-	color: #000000;
-	display: inline-block;
-	position: relative;
-	font-weight: 300;
-	text-transform: uppercase;
-	padding: 0px 20px;
-}
-
-.title2::after
-{
-	content: '';
-	position: absolute;
-	width: 100%;
-	max-width: 100%;
-	z-index: -1;
-	height: 50%;
-	margin: auto;
-	background: #ffffff;
-	left: 0;
-	bottom: 0;
-}
-
-.title3
-{
-	margin: 0 0 60px 0;
-	font-size: 1.8rem;
-	z-index: 1;
-	color: #000000;
-	display: inline-block;
-	position: relative;
-	font-weight: 300;
-	text-transform: uppercase;
-	padding: 0px 20px;
-}
-
-.title3::after
-{
-	content: '';
-	position: absolute;
-	width: 100%;
-	max-width: 100%;
-	z-index: -1;
-	height: 50%;
-	margin: auto;
-	background: #ff0000;
-	left: 0;
-	bottom: 0;
-}
 
 a
 {
 	color: rgb(255, 255, 255);
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 a:hover
 {
 	text-decoration: none;
-}
-
-/* ------------------------
-*content-modules
----------------------- */
-
-/**
-* Utilisé pour gérer les "tranches"
-* Chaque tranche doit gérer les padding top et bottom
-* Besoin d'une variante pour changer la couleur de fond
-*/
-
-.content-module
-{
-	padding-top: 80px;
-	padding-bottom: 80px;
-	background-color: #ffffff;
-}
-
-/*Change la couleur de fond */
-.content-module--alt
-{
-	background-color: #fd1821;
-}
-
-/* ------------------------
-*container
----------------------- */
-
-/**
-* Gère les padding-left et padding-right
-* pour avoir les mêmes partout dans le site
-*/
-
-.container
-{
-	padding-left: 200px;
-	padding-right: 200px;
-	text-align: center;
 }
 
 /* ------------------------
@@ -175,6 +53,7 @@ a:hover
 	box-sizing: border-box;
 	width: 100%;
 	/*position: fixed;*/
+	/*Si je trouve un moyen d'utiliser un .js pour changer la couleur de la nav au scroll*/
 }
 
 .headercontent
@@ -189,10 +68,9 @@ a:hover
 {
 	display: flex;
 	flex-direction: column;
-	color: white;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    text-decoration: none;
+
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
 }
 
 .headercontent__name
@@ -211,7 +89,7 @@ a:hover
 	justify-content: space-between;
 }
 
-.logo_first
+.logo__first
 {
 	font-weight: 300;
 	font-size: 0.9rem;
@@ -220,22 +98,22 @@ a:hover
 .logo__deco
 {
 	display: block;
-    width: 45px;
-    height: 10px;
-    position: relative;
-    overflow: hidden;
+	position: relative;	
+
+	width: 45px;
+	height: 12px;
+	overflow: hidden;
 }
 
 .logo__deco::after
 {
     content: '';
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+		height: 100%;
+		
     background: repeating-linear-gradient(-45deg, transparent, transparent 3px, #fd1821 3px, #fd1821 5px);
 }
-
-
 
 /* ------------------------
 *main nav
@@ -265,17 +143,15 @@ a:hover
 
 	font-weight: 300;
 	font-size: 0.9rem;
-	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 0.075rem;
-	color: #ffffff;
 
 	transition: all 0.2s ease-in-out;
 }
 
 .mainnav__link:hover
 {
-	color: #888888;
+	color: #fd1821;
 }
 
 /* ------------------------
@@ -286,23 +162,23 @@ a:hover
 {
 	margin: 0;
 	padding: 0;
+	height: 100vh;
+	width: auto;
 
 	background-image: url(../img/banner.png);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
-	height: 100vh;
-	width: auto;
 }
 
 .banner__content
 {
-	box-sizing: border-box; /** inclure les paddings dans la width **/
+	box-sizing: border-box;
 	padding: 35vh 18vh;
-	color: #ffffff;
-	display: block;
-	text-align: right;
 	height: 100%;
+	display: block;
+	
+	text-align: right;
 	/**
 	background-image: url(../img/about.png);
 	background-repeat: no-repeat;
@@ -314,6 +190,7 @@ a:hover
 .banner-title
 {
 	margin: 0;
+
 	font-weight: 400;
 	font-size: 2.2rem;
 	letter-spacing: 1px;
@@ -321,18 +198,19 @@ a:hover
 
 .banner-text
 {
+	margin: 0;
+
 	font-weight: 300;
 	font-size: 20px;
-	margin: 0;
 }
 
-.banner-button
+.banner__button
 {
+	position: relative;
 	display: inline-block;
 	padding: 0.75rem 1.5rem;
 	margin-top: 3rem;
 
-	text-decoration: none;
 	font-weight: 300;
 	font-size: 1.2rem;
 	color: rgb(255, 255, 255);
@@ -341,19 +219,187 @@ a:hover
 	transition: all 0.2s ease-in-out;
 }
 
+.banner__button--text
+{
+	margin: 0;
+	position: relative;
+	z-index: 1;
+}
+
+.banner__button--remplir
+{
+	position: absolute;
+	width: 0;
+	height: 100%;
+	left: 0;
+	top: 0;
+
+	background-color: #fd1821;
+
+	transition: all 0.3s linear 0s;
+}
+
+.banner__button:hover .banner__button--remplir
+{
+	width: 100%;
+}
+
+.banner-button::after
+{
+	background-color: #fd1821;
+}
+
+/* ------------------------
+*content-modules
+---------------------- */
+/*
+* Définir les niveaux du site
+*/
+
+.content-module
+{
+	padding-top: 80px;
+	padding-bottom: 80px;
+
+	background-color: #ffffff;
+}
+
+.content-module--alt
+{
+	background-color: #fd1821;
+}
+
+/* ------------------------
+*container
+---------------------- */
+/*
+* Definir les paddings des différents niveaux
+*/
+
+.container
+{
+	padding-left: 200px;
+	padding-right: 200px;
+
+	text-align: center;
+}
+
+/* ------------------------
+*Title
+---------------------- */
+
+.title1
+{
+	margin: 0 0 60px 0;
+	padding: 0px 20px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+
+	font-size: 1.8rem;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+.title1::after
+{
+	content: '';
+	position: absolute;
+	width: 100%;
+	max-width: 100%;
+	z-index: -1;
+	height: 35%;
+	margin: auto;
+	left: 0;
+	bottom: 0;
+
+	background: rgb(27, 27, 27);
+}
+
+.title2
+{
+	position: relative;
+	display: inline-block;
+	margin: 60px 0;
+	padding: 0px 20px;
+	z-index: 1;
+
+	font-size: 1.8rem;
+	color: rgb(27, 27, 27);
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+.title2::after
+{
+	content: '';
+	position: absolute;
+	width: 100%;
+	max-width: 100%;
+	z-index: -1;
+	height: 35%;
+	margin: auto;
+	left: 0;
+	bottom: 0;
+
+	background: #ffffff;
+}
+
+.title3
+{
+	margin: 0 0 60px 0;
+	padding: 0px 20px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+
+	color: rgb(27, 27, 27);
+	font-weight: 300;
+	font-size: 1.8rem;
+	text-transform: uppercase;
+}
+
+.title3::after
+{
+	content: '';
+	position: absolute;
+	width: 100%;
+	max-width: 100%;
+	z-index: -1;
+	height: 35%;
+	margin: auto;
+	left: 0;
+	bottom: 0;
+
+	background: #fd1821;
+}
+
 /* ------------------------
 *about
 ---------------------- */
 
 .about__container
 {
-	text-align: left;
-	margin-left: 40%;
-	background: white;
-	padding: 20px 40px;
 	position: relative;
-	margin-top: 25px;
-	margin-right: 15%;
+	margin: 25px 15% 0 40%;
+	padding: 20px 40px;
+
+	background: rgb(27, 27, 27);
+	text-align: left;
+}
+
+.about__text--title
+{
+	font-weight: 300;
+	text-transform: uppercase;
+	font-size: 1.4rem;
+	letter-spacing: 0.05rem;
+}
+
+.about__text--text
+{
+	font-weight: 300;
+	font-size: 1rem;
 }
 
 .about__photo
@@ -382,12 +428,13 @@ a:hover
 	margin: 0;
 	padding: 0;
 	height: 100px;
-	min-width: 100px;
+	min-width: 82px;
+	width: 100px;
 }
 
 .soft__item--text
 {
-	margin-top: 10%;
+	margin-top: 20%;
 }
 
 .soft__item--name
@@ -395,8 +442,8 @@ a:hover
 	margin: 0;
 	padding: 0;
 
-	font-weight: 300;
-	font-size: 3rem;
+	font-weight: 200;
+	font-size: 2.2rem;
 }
 
 .soft__item--pourcent
@@ -404,28 +451,36 @@ a:hover
 	margin: 0;
 	padding: 0;
 
-	font-weight: 300;
+	font-weight: 100;
 	font-size: 1rem;
 }
 
 .soft__item--ps
 {
-	background: yellow;
+	background: url(../img/75.svg);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
 }
 
 .soft__item--ai
 {
-	background: rgb(0, 255, 191);
+	background: url(../img/75.svg);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
 }
 
 .soft__item--maya
 {
-	background: rgb(247, 0, 255);
+	background: url(../img/25.svg);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
 }
 
 .soft__item--web
 {
-	background: green;
+	background: url(../img/50.svg);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
 }
 
 /* ------------------------
@@ -439,13 +494,53 @@ a:hover
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 250px 150px 220px;
-	grid-gap: 2px;
-	color: white;
+	grid-gap: 5px;
+	cursor: default;
 }
 
-.content__img
+.content__img--one
 {
-	background: url(../img/banner.png);
+	background: url(../img/artstation.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+}
+
+.content__img--two
+{
+	background: url(../img/img_01.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+}
+
+.content__img--three
+{
+	background: url(../img/img_02.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+}
+
+.content__img--four
+{
+	background: url(../img/img_03.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+}
+
+.content__img--five
+{
+	background: url(../img/img_04.png);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+}
+
+.content__img--six
+{
+	background: url(../img/img_05.png);
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	background-size: cover;
@@ -455,14 +550,15 @@ a:hover
 {
 	box-sizing: border-box;
 	padding: 1rem;
-	background-color: rgba(0, 0, 0, 0.5);
-	box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: nowrap;
+
+	background-color: rgba(27, 27, 27, 0.5);
+	box-shadow: 0 5px 10px rgba(27, 27, 27,0.1);
 	opacity: 0;
 	transition: all 0.5s ease-in-out;
 }
@@ -470,6 +566,20 @@ a:hover
 .portfolio__img:hover
 {
 	opacity: 1;
+}
+
+.portfolio__img--link
+{
+	box-sizing: border-box;
+	padding: 1rem;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	background-color: rgba(27, 27, 27, 0.5);
+	box-shadow: 0 5px 10px rgba(27, 27, 27,0.1);
 }
 
 .portfolio__img--one
@@ -490,8 +600,17 @@ a:hover
 	grid-column: 3 / 4;
 }
 
+.portfolio__description
+{
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 0.05rem;
+}
+
 .portfolio__cat
 {
+	text-transform: uppercase;
+	font-weight: 200;
 	border-top: 1px solid #fd1821;
 }
 
@@ -510,7 +629,6 @@ a:hover
 	grid-gap: 10px;
 	text-align: left;
 	align-items: center;
-	color: white;
 }
 
 .myemail
@@ -574,7 +692,7 @@ a:hover
 	z-index: -1;
 	height: 50%;
 	margin: auto;
-	background: #000000;
+	background: rgb(27, 27, 27);
 	left: 0;
 	bottom: -5px;
 }
@@ -583,7 +701,7 @@ a:hover
 {
 	display: inline-block;
 	font-weight: 300;
-	letter-spacing: 0.05rem;
+	font-size: 0.95rem;
 	margin: 0;
 }
 
@@ -591,10 +709,10 @@ a:hover
 {
 	width: 100%;
 	height: 30px;
+	padding: 1px 0 0 5px;
 	box-sizing: border-box;
 	border: 1px solid #16161650;
 	background-color: #16161650;
-	color: white;
 }
 
 .contact__content--message
@@ -604,27 +722,24 @@ a:hover
 	padding: 5px 0px 150px 5px;
 	border: 1px solid #16161650;
 	background-color: #16161650;
+}
+
+.contact__content--message::placeholder, .contact__content::placeholder
+{
+	font-weight: 100;
 	color: white;
 }
 
 .send_button
 {
 	padding: 0.8rem 4rem;
-	background-color: #161616;
-	text-decoration: none;
+	background-color: rgb(27, 27, 27);
 	font-size: 1.2rem;
 	font-weight: 300;
 	color: rgb(255, 255, 255);
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.25);
 	transition: all 0.2s ease-in-out;
 }
-
-.contact__content--message::placeholder, .contact__content::placeholder
-{
-	color: white;
-	font-weight: 100;
-}
-
 
 /* ------------------------
 *footer
@@ -671,7 +786,7 @@ a:hover
 	z-index: -1;
 	height: 50%;
 	margin: auto;
-	background: #ff0000;
+	background: #fd1821;
 	left: 0;
 	bottom: 0;
 }
@@ -684,6 +799,7 @@ a:hover
 
 .copyright--text
 {
+	color: black;
 	display: block;
 	margin: 0;
 	padding: 0;
@@ -693,10 +809,105 @@ a:hover
 }
 
 /* ------------------------
-*fluid images
+*RESPONSIVE !!!
 ---------------------- */
 
-.fluidimage
+@media all and (max-width: 1000px)
 {
-	max-width: 100%;
+
+	.siteheader
+	{
+		padding: 1rem 1rem;
+	}
+
+	.headercontent
+	{
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.mainnav
+	{
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.mainnav__item
+	{
+		margin-top: 10px;
+		border-bottom: 2px solid #fd1821;
+	}
+
+	.banner__content
+	{
+		padding: 15vh 5vh;
+	}
+
+	.container
+	{
+		padding: 0;
+	}
+
+	.portfolio
+	{
+		margin: 0 5%;
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	.contact
+	{
+		width: auto;
+		margin: 0 5%;
+    grid-template-columns: 1fr 25% 1fr;
+    grid-template-areas: "myemail myphone myadress" "name email email" "message message message" ". send .";
+	}
+
+	.contact__img--bar
+	{
+		margin: 0 2px 20px 0;
+		padding: 0 2px;
+	}
+
+	.contact__text
+	{
+		letter-spacing: 0;
+	}
+}
+
+/* ------------------------
+*ENCORE PLUS PETIT !!!
+---------------------- */
+
+@media all and (max-width: 700px)
+{
+	.about__container
+	{
+		margin-right: 0
+	}
+
+	.soft
+	{
+		margin: 0 5%;
+	}
+
+	.portfolio
+	{
+		margin: 0;
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	.contact
+	{
+		width: auto;
+		margin: 0 5%;
+		grid-template-columns: 1fr 1fr;
+		grid-template-areas: "myphone myphone myphone" "myemail myemail myemail" "myadress myadress myadress" "name email email" "message message message" ". . send ";
+	}
+
+	.social__item:not(:last-child)
+	{
+		margin-right: 0;
+	}
 }
